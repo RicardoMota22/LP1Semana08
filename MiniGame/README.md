@@ -3,29 +3,31 @@
 ```mermaid
 classDiagram
     class Character {
-        -Weapon [] weapons
-        -string Name
+        # Weapon [] weapons
+        - string Name
         + Fight()
     }
 
     class Player {
-        +Player(string name)
+        + Player(string name)
     }
 
     class Enemy {
-        +Enemy(string name)
+        + Enemy(string name)
     }
 
     class Weapon {
-        -float power
+        + float power
     }
 
     class Gun {
-        +Gun(float power, int ammo)
+        + Gun(float power, int ammo)
+        + FireGun()
     }
 
     class Sword {
-        +Sword(float damage, float bladeLength)
+        + Sword(float damage, float bladeLength)
+        + AttackWithSword()
     }
 
     Character <|-- Player
