@@ -4,7 +4,7 @@
 classDiagram
     class Character {
         # Weapon [] weapons
-        - string Name
+        + string Name
         + Fight()
     }
 
