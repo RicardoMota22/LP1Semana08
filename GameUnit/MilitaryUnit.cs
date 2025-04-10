@@ -1,3 +1,4 @@
+using System.Globalization;
 namespace GameUnit
 {
     public class MilitaryUnit : Unit // Heranca!!
@@ -19,13 +20,20 @@ namespace GameUnit
 
         public void Attack (Unit u)
         {
-            XP = Health - AttackPower;
+            u.Health -= AttackPower;
+            XP++;
         }
+
+        public string Newcost()
+        {
+            return Cost.ToString("F2",CultureInfo.InvariantCulture);
+        }
+        
 
         public override string ToString()
         {
-            return $"MilitaryUnit HP={Health}"+
-            $" COST={Cost} AP={AttackPower} XP={XP} ";
+            return $"MilitaryUnit: HP={Health}"+
+            $" COST={Newcost()} AP={AttackPower} XP={XP} ";
         }
     }
 }

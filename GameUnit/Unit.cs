@@ -1,5 +1,6 @@
 using System;
 using Humanizer;
+using System.Globalization;
 
 namespace GameUnit
 {
@@ -22,10 +23,17 @@ namespace GameUnit
 
         public abstract float Cost{get;} // Propriedade read only
 
+        //making cost 2dp
+        public string Newcost()
+        {
+            return Cost.ToString("F2",CultureInfo.InvariantCulture);
+        }
+        
+
         public override string ToString()
         {
-            return $"{this.GetType().Name} HP={Health}"+
-            $" COST={Cost} ";
+            return $"{this.GetType().Name}: HP={Health}"+
+            $" COST={Newcost()} ";
         }
 
         
