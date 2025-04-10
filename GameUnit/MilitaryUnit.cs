@@ -6,6 +6,8 @@ namespace GameUnit
         public override int Health { get => base.Health + XP;}
         public override float Cost { get => AttackPower + XP;}
 
+        
+
         public int AttackPower { get; }
         public int XP { get; private set; }
 
@@ -18,6 +20,12 @@ namespace GameUnit
         public void Attack (Unit u)
         {
             XP = Health - AttackPower;
+        }
+
+        public override string ToString()
+        {
+            return $"MilitaryUnit HP={Health}"+
+            $" COST={Cost} AP={AttackPower} XP={XP} ";
         }
     }
 }
